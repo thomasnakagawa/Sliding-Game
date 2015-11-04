@@ -1,0 +1,102 @@
+{
+tttttttttttt                    
+t          t                    
+t Pt       t                    
+t  t       t                    
+t  t       t                    
+t  t       t                    
+t  t       t                    
+t  t       t                    
+t  t       t                    
+t  ttttttttt                    
+t                               
+tttttttttttttttE                
+}
+{
+         E                      
+         t                      
+         t                      
+         t                      
+         t                      
+Pttttttttwttttttttttt           
+         t          t           
+         t          t           
+         t          t           
+         t          t           
+         t          t           
+         t          t           
+         t          t           
+         t          t           
+         tttttttttttt           
+}
+{
+ttttttttttttttttt               
+t        t      t               
+t        t      t               
+ttPtttttttttttttt               
+tt       tttttttt               
+ttttttttEt                      
+tttttttttt                      
+}
+{
+Ptttt                           
+    tttttt                      
+Ett tt   tt                     
+  t ttttt t                     
+  t t   t t                     
+  t t   t t                     
+  t ttttt t                     
+  tt     tt                     
+   ttttttt                      
+}
+{
+P     
+t     
+t  Ett
+t    t
+t    t
+t    t
+tttttt
+}
+{
+     ttttt
+     t   t
+     t   t
+Ptttwwww t
+     t w t
+     t w t
+   ttwtwtt
+   t t t  
+   t t t  
+   ttwtt  
+     t    
+     E    
+}
+{
+   ttttt
+   t   t
+   t   t
+ttttttPt
+t  t   t
+t  t   t
+t  t   t
+tttttttt
+   t
+   ttttttttttE
+}
+{
+ tttttttt
+ t      t
+ t tttttt
+ t t   tt
+ wwww  tt
+Ewwwwtttt
+ wPww ttt
+wwwwwtttt
+wwwww  tt
+tt     tt
+ttttttttt
+t       t
+ttttttttt
+}
+
