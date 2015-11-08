@@ -12,6 +12,7 @@
     <sprite>sprites\spr_tile</sprite>
     <sprite>sprites\spr_Wall</sprite>
     <sprite>sprites\spr_key</sprite>
+    <sprite>sprites\sprite6</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -30,6 +31,7 @@
     <object>objects\part_destroy</object>
     <object>objects\obj_tile</object>
     <object>objects\base_button</object>
+    <object>objects\obj_bracket1</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

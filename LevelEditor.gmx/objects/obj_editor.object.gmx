@@ -40,10 +40,7 @@ width = (room_width)/32;
 char = "";
 for(var i = 0; i &lt; height;i++)
 {
-    for(var j = 0; j &lt; width; j++)
-    {
-        data[j,i] = "_";
-    }
+    data[i] = "";
 }
 </string>
           </argument>
@@ -89,7 +86,7 @@ if(keyboard_check(ord('4')))
 }
 if(keyboard_check(vk_control) &amp;&amp; keyboard_check_pressed(ord('S')))
 {
-    var exportstring = read_level();
+    read_level();
 }
 </string>
           </argument>
