@@ -5,10 +5,10 @@
   <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_tile</parentName>
+  <parentName>base_plat</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="1" enumb="0">
+    <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,11 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
-if(instance_exists(obj_player))
-{
-obj_player.flying = true;
-}
+            <string>intro_particle = obj_introkey;
+outro_particle = obj_outrokey;
+been_used = false;
+event_inherited();
 </string>
           </argument>
         </arguments>
@@ -52,12 +51,7 @@ obj_player.flying = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(activate)
-{
-    stand_on = true;
-    instance_destroy();
-}
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>

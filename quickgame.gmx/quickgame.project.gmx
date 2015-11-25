@@ -45,9 +45,10 @@
     <script>scripts\log.gml</script>
     <script>scripts\snd_lowbongo.gml</script>
     <script>scripts\snd_highbongo.gml</script>
-    <script>scripts\level_make.gml</script>
-    <script>scripts\next_level.gml</script>
+    <script>scripts\build_level.gml</script>
     <script>scripts\restart_level.gml</script>
+    <script>scripts\make_level.gml</script>
+    <script>scripts\clear_tiles.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
@@ -59,20 +60,23 @@
     <object>objects\game</object>
     <objects name="particles">
       <object>objects\obj_playerintro</object>
-      <object>objects\obj_introshrink</object>
-      <object>objects\obj_introgrow</object>
-      <object>objects\obj_playerleave</object>
-      <object>objects\obj_destroytile</object>
-      <object>objects\obj_destroywall</object>
+      <object>objects\obj_introtile</object>
+      <object>objects\obj_introkey</object>
+      <object>objects\obj_introwall</object>
+      <object>objects\obj_playeroutro</object>
+      <object>objects\obj_outrotile</object>
+      <object>objects\obj_outrokey</object>
+      <object>objects\obj_outrowall</object>
     </objects>
     <objects name="data&amp;stuff">
-      <object>objects\base_particle</object>
       <object>objects\base_interact</object>
       <object>objects\struct_level</object>
     </objects>
-    <object>objects\obj_editor</object>
+    <object>objects\base_particle</object>
+    <object>objects\obj_swoop_away</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room9</room>
     <room>rooms\main_room</room>
     <room>rooms\room7</room>
     <room>rooms\room0</room>

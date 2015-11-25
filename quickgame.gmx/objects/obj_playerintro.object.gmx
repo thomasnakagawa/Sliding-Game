@@ -25,12 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>tary = 0;
-host = noone;
-
-maxsp = 30;
-sp = 30;
-accel = 15;
+            <string>event_inherited();
+y_vel = 30;
+y_accel = 5;
+tary = y;
+y = -16;
+lifespan = 60 * 6;
 </string>
           </argument>
         </arguments>
@@ -53,13 +53,9 @@ accel = 15;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sp += accel;
-if(sp &gt; maxsp) sp = maxsp;
-y += sp;
-if(y &gt;= tary)
-{
+            <string>event_inherited();
+if(y &gt;= tary){
     y = tary;
-    host.visible = true;
     instance_destroy();
 }
 </string>

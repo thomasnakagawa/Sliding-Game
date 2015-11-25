@@ -25,10 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>intro = instance_create(x,y,intro_particle);
-intro.host = id;
-active = false;
-exit_particle = true;
+            <string>final_form = obj_test_tile;
 </string>
           </argument>
         </arguments>
@@ -51,7 +48,7 @@ exit_particle = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(exit_particle) instance_create(x,y,outro_particle);
+            <string>instance_create(x,y,final_form);
 </string>
           </argument>
         </arguments>

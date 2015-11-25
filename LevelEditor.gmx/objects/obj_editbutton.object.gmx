@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>base_button</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,16 +25,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>intro = instance_create(x,y,intro_particle);
-intro.host = id;
-active = false;
-exit_particle = true;
+            <string>event_inherited();
+text = "Edit";
+hover_message = "Shortcut: esc";
+width = 128;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="1" enumb="0">
+    <event eventtype="6" enumb="56">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -51,7 +51,14 @@ exit_particle = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(exit_particle) instance_create(x,y,outro_particle);
+            <string>if(hover){
+    with(obj_tester){
+        instance_destroy();
+        instance_create(0,0,obj_editor);
+        test_to_edit();
+
+    }
+}
 </string>
           </argument>
         </arguments>

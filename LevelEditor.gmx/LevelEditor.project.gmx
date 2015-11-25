@@ -12,7 +12,10 @@
     <sprite>sprites\spr_tile</sprite>
     <sprite>sprites\spr_Wall</sprite>
     <sprite>sprites\spr_key</sprite>
-    <sprite>sprites\sprite6</sprite>
+    <sprite>sprites\spr_person</sprite>
+    <sprite>sprites\spr_testtile</sprite>
+    <sprite>sprites\spr_testwall</sprite>
+    <sprite>sprites\spr_testkey</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -21,9 +24,14 @@
     <script>scripts\read_level.gml</script>
     <script>scripts\shift_tocorder.gml</script>
     <script>scripts\shift_all.gml</script>
+    <script>scripts\edit_to_test.gml</script>
+    <script>scripts\bool_in_field.gml</script>
+    <script>scripts\reset_test.gml</script>
+    <script>scripts\test_to_edit.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_editor</object>
+    <object>objects\obj_tester</object>
     <object>objects\obj_player</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_key</object>
@@ -31,7 +39,22 @@
     <object>objects\part_destroy</object>
     <object>objects\obj_tile</object>
     <object>objects\base_button</object>
-    <object>objects\obj_bracket1</object>
+    <objects name="objects for test runs">
+      <object>objects\obj_test_player</object>
+      <object>objects\obj_test_tile</object>
+      <object>objects\obj_test_wall</object>
+      <object>objects\obj_test_key</object>
+      <object>objects\obj_trace_test</object>
+      <object>objects\base_plat</object>
+      <object>objects\base_testers</object>
+    </objects>
+    <object>objects\obj_resetbutton</object>
+    <object>objects\obj_editbutton</object>
+    <object>objects\obj_testbutton</object>
+    <object>objects\obj_buttonplayer</object>
+    <object>objects\obj_buttontile</object>
+    <object>objects\obj_buttonrock</object>
+    <object>objects\obj_buttonkey</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

@@ -1,4 +1,9 @@
-///level_make()
+///build_level()
+/////
+////
+//      this only ever needs to be called from make_level()!!!!
+////
+/////
 var xbor = ((room_width-(width*32))/2);
 var ybor = ((room_height-(height*32))/2);
 log("building...");
