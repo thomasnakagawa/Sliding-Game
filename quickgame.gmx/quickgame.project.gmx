@@ -38,6 +38,8 @@
     <sprite>sprites\spr_block</sprite>
     <sprite>sprites\spr_ring</sprite>
     <sprite>sprites\spr_jump</sprite>
+    <sprite>sprites\spr_smallmask</sprite>
+    <sprite>sprites\sprite7</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -49,6 +51,8 @@
     <script>scripts\restart_level.gml</script>
     <script>scripts\make_level.gml</script>
     <script>scripts\clear_tiles.gml</script>
+    <script>scripts\offset_tiles.gml</script>
+    <script>scripts\get_gridsize.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
@@ -76,8 +80,8 @@
     <object>objects\obj_swoop_away</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room9</room>
     <room>rooms\main_room</room>
+    <room>rooms\room9</room>
     <room>rooms\room7</room>
     <room>rooms\room0</room>
     <room>rooms\room1</room>

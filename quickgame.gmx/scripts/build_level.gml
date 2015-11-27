@@ -4,8 +4,10 @@
 //      this only ever needs to be called from make_level()!!!!
 ////
 /////
-var xbor = ((room_width-(width*32))/2);
-var ybor = ((room_height-(height*32))/2);
+
+var grid = argument0;
+var xbor = ((room_width-(width*grid))/2);
+var ybor = ((room_height-(height*grid))/2);
 log("building...");
 //do everything
 for(var i = 0; i < height;i++)
@@ -18,20 +20,20 @@ for(var i = 0; i < height;i++)
             case " ":
                 break;
             case "t":
-                instance_create(xbor + j*32, ybor + i*32,obj_tile);
+                instance_create(xbor + j*grid, ybor + i*grid,obj_tile);
                 break;
             case "w":
-                instance_create(xbor + j*32, ybor + i*32,obj_wall);
+                instance_create(xbor + j*grid, ybor + i*grid,obj_wall);
                 break;
             case "E":
-                instance_create(xbor + j*32, ybor + i*32,obj_key);
+                instance_create(xbor + j*grid, ybor + i*grid,obj_key);
                 break;
             case "P":
-                instance_create(xbor + j*32, ybor + i*32,obj_player);
+                instance_create(xbor + j*grid, ybor + i*grid,obj_player);
                 break;
             default:
                 break;
         }
     }
 }
-//instance_destroy();
+//offset_tiles();

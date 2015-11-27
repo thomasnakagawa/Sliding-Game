@@ -29,6 +29,7 @@
 alpha = 1;
 alpha_vel = -0.05;
 x_start = x;
+scale_gain = game.hgrid/32;
 </string>
           </argument>
         </arguments>
@@ -103,7 +104,7 @@ alpha += alpha_vel;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,0,x,y,1,1,0,c_white,alpha);
+            <string>draw_sprite_ext(sprite_index,0,x,y,scale_gain,scale_gain,0,c_white,alpha);
 </string>
           </argument>
         </arguments>

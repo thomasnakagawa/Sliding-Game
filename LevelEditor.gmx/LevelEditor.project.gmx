@@ -30,15 +30,15 @@
     <script>scripts\test_to_edit.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\obj_editor</object>
-    <object>objects\obj_tester</object>
-    <object>objects\obj_player</object>
-    <object>objects\obj_wall</object>
-    <object>objects\obj_key</object>
-    <object>objects\base_piece</object>
-    <object>objects\part_destroy</object>
-    <object>objects\obj_tile</object>
-    <object>objects\base_button</object>
+    <objects name="objects for editing">
+      <object>objects\obj_editor</object>
+      <object>objects\obj_player</object>
+      <object>objects\obj_wall</object>
+      <object>objects\obj_tile</object>
+      <object>objects\part_destroy</object>
+      <object>objects\obj_key</object>
+      <object>objects\base_piece</object>
+    </objects>
     <objects name="objects for test runs">
       <object>objects\obj_test_player</object>
       <object>objects\obj_test_tile</object>
@@ -47,17 +47,25 @@
       <object>objects\obj_trace_test</object>
       <object>objects\base_plat</object>
       <object>objects\base_testers</object>
+      <object>objects\obj_tester</object>
     </objects>
-    <object>objects\obj_resetbutton</object>
-    <object>objects\obj_editbutton</object>
-    <object>objects\obj_testbutton</object>
-    <object>objects\obj_buttonplayer</object>
-    <object>objects\obj_buttontile</object>
-    <object>objects\obj_buttonrock</object>
-    <object>objects\obj_buttonkey</object>
+    <objects name="buttons">
+      <object>objects\obj_buttonkey</object>
+      <object>objects\obj_createbutton</object>
+      <object>objects\obj_donebutton</object>
+      <object>objects\obj_buttonrock</object>
+      <object>objects\obj_buttontile</object>
+      <object>objects\obj_buttonplayer</object>
+      <object>objects\obj_testbutton</object>
+      <object>objects\obj_editbutton</object>
+      <object>objects\obj_resetbutton</object>
+      <object>objects\base_button</object>
+    </objects>
+    <object>objects\obj_planner</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <room>rooms\rm_plan</room>
+    <room>rooms\rm_edit_and_test</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

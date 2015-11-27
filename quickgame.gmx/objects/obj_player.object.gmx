@@ -3,10 +3,10 @@
   <spriteName>spr_player</spriteName>
   <solid>0</solid>
   <visible>0</visible>
-  <depth>-90</depth>
+  <depth>999</depth>
   <persistent>0</persistent>
   <parentName>base_interact</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>spr_smallmask</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -31,10 +31,10 @@ downkey = vk_down;
 leftkey = vk_left;
 rightkey = vk_right;
 movpercent = 0.1;
-base_speed = floor(game.hgrid/8);
+base_speed = game.hgrid/8;
 tarx = 0;
 tary = 0;
-max_speed = game.hgrid-2;
+max_speed = game.hgrid * .75;
 movement = "none";
 
 moving = false;
@@ -46,6 +46,9 @@ inputs = ds_queue_create();
 intro_particle = obj_playerintro;
 outro_particle = obj_playeroutro;
 event_inherited();
+depth = -9999;
+
+scale_gain = game.hgrid/sprite_get_height(sprite_index);
 </string>
           </argument>
         </arguments>
@@ -101,7 +104,7 @@ if(!moving)
         {
             tary = y;
             tarx = x;
-            while(place_meeting(x,tary+game.vgrid,base_plat))
+            while(position_meeting(x,tary+game.vgrid,base_plat))
             {
                 moving = true;
                 tary += game.vgrid;
@@ -176,11 +179,10 @@ else if(moving)
             obj.activate = true;
         }
     }
-    //move self  
-    {
-        x += xx;
-        y += yy;
-    }
+    //move self 
+    x += xx;
+    y += yy;
+    
     
     //check if at the target for movement. if so , then stop
     if(floor(x) == tarx &amp;&amp; floor(y) == tary)
@@ -218,11 +220,11 @@ else if(moving)
             <kind>1</kind>
             <string>if(moving)
 {
-    draw_sprite_ext(sprite_index,0,x,y,1,1,0,c_black,1);
+    draw_sprite_ext(sprite_index,0,x,y,scale_gain,scale_gain,0,c_black,1);
 }
 else
 {
-    draw_sprite_ext(sprite_index,0,x,y,1,1,0,c_white,1);
+    draw_sprite_ext(sprite_index,0,x,y,scale_gain,scale_gain,0,c_white,1);
 }
 </string>
           </argument>

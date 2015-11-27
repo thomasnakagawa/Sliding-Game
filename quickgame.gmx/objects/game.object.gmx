@@ -29,7 +29,7 @@
 alarm[0] = 1;
 hgrid = 32;
 vgrid = 32;
-//instance_create(0,0,room_maker);
+instance_create(0,0,room_maker);
 </string>
           </argument>
         </arguments>

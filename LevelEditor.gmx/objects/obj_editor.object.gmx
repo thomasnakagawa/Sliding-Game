@@ -50,6 +50,7 @@ instance_create(10,10,obj_buttonplayer);
 instance_create(84,10,obj_buttontile);
 instance_create(158,10,obj_buttonrock);
 instance_create(232,10,obj_buttonkey);
+instance_create(340,10,obj_donebutton);
 </string>
           </argument>
         </arguments>

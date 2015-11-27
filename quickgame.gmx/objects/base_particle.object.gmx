@@ -49,6 +49,8 @@ y_accel = 0;
 alpha = 1;
 alpha_vel = 0;
 alpha_accel = 0;
+
+scale_gain = game.hgrid/32;
 </string>
           </argument>
         </arguments>
@@ -143,7 +145,7 @@ if(lifespan &gt; 0){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,0,x,y,xscale,yscale,rotation,c_white,alpha);
+            <string>draw_sprite_ext(sprite_index,0,x,y,scale_gain * xscale,scale_gain * yscale,rotation,c_white,alpha);
 </string>
           </argument>
         </arguments>
