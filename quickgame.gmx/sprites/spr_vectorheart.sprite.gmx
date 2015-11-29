@@ -20,9 +20,9 @@
   <width>30</width>
   <height>30</height>
   <frames>
-    <frame index="0">images\sprite7_0.png</frame>
+    <frame index="0">images\spr_vectorheart_0.png</frame>
   </frames>
-  <SWFfile>images\sprite7.swf</SWFfile>
+  <SWFfile>images\spr_vectorheart.swf</SWFfile>
   <SWFnumframes>75</SWFnumframes>
-  <SWFprecision>0.5</SWFprecision>
+  <SWFprecision>0.05</SWFprecision>
 </sprite>

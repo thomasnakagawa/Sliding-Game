@@ -28,7 +28,7 @@
             <string>increment = 0;
 alpha = 1;
 alpha_vel = -0.05;
-x_start = x;
+x_start = y;
 scale_gain = game.hgrid/32;
 </string>
           </argument>
@@ -57,7 +57,7 @@ var i = increment;
 var a = -1.1077;
 var b = 9.8965;
 var c = x_start;
-x = (i * i * a) + (i * b) + c;
+y = (i * i * a) + (i * b) + c;
 alpha += alpha_vel;
 </string>
           </argument>

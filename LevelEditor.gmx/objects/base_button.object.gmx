@@ -35,6 +35,8 @@ click_col = c_lime;
 
 current_col = standby_col;
 hover = false;
+hover_time = 0;
+hover_show = 30;
 </string>
           </argument>
         </arguments>
@@ -60,11 +62,13 @@ hover = false;
             <string>if(mouse_x &gt;= x &amp;&amp; mouse_x &lt;= x+width &amp;&amp;
    mouse_y &gt;= y &amp;&amp; mouse_y &lt;= y+height){
    hover = true;
+   hover_time++;
    current_col = hover_col;
 }
 else
 {
     hover = false;
+    hover_time = 0;
     current_col = standby_col;
 }
 </string>
@@ -89,7 +93,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(hover){
+            <string>if(hover_time &gt; hover_show){
     var w = string_width(hover_message);
     var h = string_height(hover_message);
     draw_set_color(c_silver);   

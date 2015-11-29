@@ -31,6 +31,7 @@
     <sound>sound\snd_fall2</sound>
     <sound>sound\snd_fall3</sound>
     <sound>sound\sound6</sound>
+    <sound>sound\snd_win</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_player</sprite>
@@ -39,7 +40,7 @@
     <sprite>sprites\spr_ring</sprite>
     <sprite>sprites\spr_jump</sprite>
     <sprite>sprites\spr_smallmask</sprite>
-    <sprite>sprites\sprite7</sprite>
+    <sprite>sprites\spr_vectorheart</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
