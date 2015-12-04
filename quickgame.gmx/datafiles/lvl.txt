@@ -1,49 +1,8 @@
 {
-P           
-t           
-t           
-t     tttttt
-t     t    t
-t     t    t
-t     t    t
-t     t    t
-ttttttwttttt
-      t     
-      t     
-      t     
-      t     
-      t     
-      t     
-      t     
-      t     
-      t     
-      t     
-      t   
-      t   
-      t   
-      t     
-      t     
-      t     
-      t     
-      t     
-      E     
-}
-{
-P           
-t           
-t           
-t     tttttt
-t     t    t
-t     t    t
-t     t    t
-t     t    t
-ttttttwttttt
-      t     
-      t     
-      t     
-      t     
-      t     
-      E     
+
+   !
+
+PtttttE
 }
 {
 P     
@@ -53,6 +12,23 @@ t    t
 t    t
 t    t
 tttttt
+}
+{
+P           
+t           
+t           
+t     tttttt
+t     t    t
+t     t    t
+t     t    t
+t     t    t
+ttttttwttttt
+      t     
+      t     
+      t     
+      t     
+      t     
+      E     
 }
 {
 Pttttt        

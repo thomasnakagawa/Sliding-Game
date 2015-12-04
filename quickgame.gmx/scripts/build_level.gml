@@ -6,8 +6,8 @@
 /////
 
 var grid = argument0;
-var xbor = ((room_width-(width*grid))/2);
-var ybor = ((room_height-(height*grid))/2);
+var xbor = ((-grid + room_width-(width*grid))/2);
+var ybor = ((grid + room_height-(height*grid))/2);
 log("building...");
 //do everything
 for(var i = 0; i < height;i++)
@@ -29,6 +29,7 @@ for(var i = 0; i < height;i++)
                 instance_create(xbor + j*grid, ybor + i*grid,obj_key);
                 break;
             case "P":
+                instance_create(xbor + j*grid, ybor + i*grid,obj_tile);
                 instance_create(xbor + j*grid, ybor + i*grid,obj_player);
                 break;
             default:
