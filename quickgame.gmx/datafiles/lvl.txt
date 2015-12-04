@@ -95,15 +95,6 @@ Ptttwwww t
      E    
 }
 {
-ttttttttttttttttt
-t        t      t
-t        t      t
-ttPtttttttttttttt
-tt       tttttttt
-ttttttttEt
-tttttttttt
-}
-{
    ttttt
    t   t
    t   t
@@ -114,6 +105,27 @@ t  t   t
 tttttttt
    t
    ttttttttttE
+}
+{
+ttttttttttttttttt
+t        t      t
+t        t      t
+ttPtttttttttttttt
+tt       tttttttt
+ttttttttEt
+tttttttttt
+}
+{
+     tttt   
+     t  t   
+Pttttwttt   
+     ttttttt
+       ttt t
+     t ttt t
+     t ttt t
+    Etttwt t
+     tttwt t
+     wwwwttt
 }
 {
  tttttttt
@@ -130,4 +142,24 @@ ttttttttt
 t       t
 ttttttttt
 }
-
+{
+ wwwwwwww        wwwwwwww
+ w     twwwwwwwwwwt     w
+ w     t          t     w
+ w     ttttttttttttt    w
+ w      Etttttttt  t    w
+Pw              t  tttttw
+ wtttttttttttttttt       
+ ww            t t       
+  wttttttttttttt t       
+  w            t t       
+ wwtttt        t t       
+ w    tttttttttt t       
+ w      tttttttttt       
+ w      t        tttt    
+ w      t           t    
+ w      t           t    
+ w      t           t    
+ w      twwwwwwwwwwwt    
+ wwwwwwwww               
+}

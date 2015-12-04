@@ -28,7 +28,7 @@
             <string>intro = instance_create(x,y,intro_particle);
 intro.host = id;
 active = false;
-scale_gain = game.hgrid/32;
+scale_gain = game.hgrid/max(sprite_get_width(sprite_index),sprite_get_height(sprite_index));
 exit_particle = true;
 depth = -y;
 </string>

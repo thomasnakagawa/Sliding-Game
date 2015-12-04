@@ -49,8 +49,8 @@ y_accel = 0;
 alpha = 1;
 alpha_vel = 0;
 alpha_accel = 0;
+scale_gain = game.hgrid/max(sprite_get_width(sprite_index),sprite_get_height(sprite_index));
 
-scale_gain = game.hgrid/32;
 </string>
           </argument>
         </arguments>

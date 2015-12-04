@@ -34,6 +34,7 @@ x_vel = irandom_range(-3,3);
 y_vel = irandom_range(-3,3);
 y_accel = 0.3;
 lifespan = 60*2;
+scale_gain = game.hgrid/sprite_get_height(sprite_index);
 </string>
           </argument>
         </arguments>

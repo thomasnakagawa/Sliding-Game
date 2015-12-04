@@ -29,7 +29,7 @@
 alpha = 1;
 alpha_vel = -0.05;
 x_start = y;
-scale_gain = game.hgrid/32;
+scale_gain = game.hgrid/max(sprite_get_width(sprite_index),sprite_get_height(sprite_index));
 </string>
           </argument>
         </arguments>

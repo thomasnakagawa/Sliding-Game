@@ -37,6 +37,7 @@ alpha_vel = 0.2;
 xscale_vel = 0.1;
 yscale_vel = 0.1;
 xscale_accel = -0.1;
+scale_gain = game.hgrid/sprite_get_height(sprite_index);
 
 </string>
           </argument>

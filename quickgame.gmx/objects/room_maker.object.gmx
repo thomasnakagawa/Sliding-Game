@@ -90,8 +90,10 @@ current_delay = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if( (keyboard_check(vk_shift) ||instance_number(obj_player) == 0 ) &amp;&amp; current_level &lt; num_levels &amp;&amp; current_delay &lt; 1)
+            <string>if( (keyboard_check(ord('U')) ||instance_number(obj_player) == 0 ) &amp;&amp; current_level &lt; num_levels &amp;&amp; current_delay &lt; 1)
 {
+    //level clear
+    audio_play_sound(snd_win,1,false);
     current_delay = delay_time;
     clear_tiles();
 }

@@ -28,9 +28,9 @@
             <string>//
 event_inherited();
 alpha = 0;
-delay = irandom_range(0,15);
+delay = (x*y % 16);
 
-var tempscale = irandom_range(0,10) * 0.1;
+var tempscale = (x*y % 10) * 0.1;
 xscale = tempscale;
 yscale = tempscale;
 
@@ -64,7 +64,6 @@ xscale_accel = 0.1;
             <string>event_inherited();
 if(alpha &gt;= 1)
 {
-    snd_lowbongo();
     instance_destroy();
 }
 </string>
