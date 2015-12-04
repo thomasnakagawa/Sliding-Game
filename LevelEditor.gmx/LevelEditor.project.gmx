@@ -28,6 +28,7 @@
     <script>scripts\bool_in_field.gml</script>
     <script>scripts\reset_test.gml</script>
     <script>scripts\test_to_edit.gml</script>
+    <script>scripts\write_text.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="objects for editing">
@@ -52,6 +53,7 @@
     <objects name="buttons">
       <object>objects\obj_buttonkey</object>
       <object>objects\obj_createbutton</object>
+      <object>objects\obj_getfilebutton</object>
       <object>objects\obj_donebutton</object>
       <object>objects\obj_buttonrock</object>
       <object>objects\obj_buttontile</object>
@@ -61,9 +63,17 @@
       <object>objects\obj_resetbutton</object>
       <object>objects\base_button</object>
     </objects>
-    <object>objects\obj_planner</object>
+    <objects name="objects for planning">
+      <object>objects\obj_planner</object>
+      <object>objects\struct_level</object>
+      <object>objects\obj_trace_level</object>
+    </objects>
+    <objects name="objects for intro">
+      <object>objects\obj_filename</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_intro</room>
     <room>rooms\rm_plan</room>
     <room>rooms\rm_edit_and_test</room>
   </rooms>

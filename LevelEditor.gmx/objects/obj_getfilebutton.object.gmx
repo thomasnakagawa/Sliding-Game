@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-text = "done";
-hover_message = "shortcut: ctrl+enter";
+text = "Choose file";
+hover_message = "must be txt";
 width = 128;
 </string>
           </argument>
@@ -75,7 +75,9 @@ width = 128;
           <argument>
             <kind>1</kind>
             <string>if(hover){
-    read_level();
+    var inst = instance_create(0,0,obj_filename);
+    var input = get_open_filename("text file|*.txt", "");
+    inst.filename = input;
     room_goto(rm_plan);
 }
 </string>

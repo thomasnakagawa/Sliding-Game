@@ -48,7 +48,19 @@ for(var i = 0; i < spacesheight; i++){
     show_debug_message(data[i]);
 }//i
 
+//make trac_level for the planning room
+var newlev = instance_create(0,0,obj_trace_level);
+newlev.width = spaceswidth;
+newlev.height = spacesheight;
+for(var i = 0; i < spacesheight; i++)
+{
+    newlev.data[i] = data[i];
+}
 
+
+
+
+/*
 //make main string
 var tempstr = "{" + chr(13) + chr(10);
 for(var i = 0; i < spacesheight;i++)
@@ -58,4 +70,9 @@ for(var i = 0; i < spacesheight;i++)
 }
 tempstr += "}";
 show_debug_message(tempstr);
-clipboard_set_text(tempstr);
+//make a trace_level to pass onto the planing room
+var inst = instance_create(0,0,obj_trace_level);
+inst.data = tempstr;
+inst.width = spaceswidth;
+inst.height = spacesheight;
+*/

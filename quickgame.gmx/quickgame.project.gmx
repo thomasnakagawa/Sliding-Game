@@ -38,7 +38,6 @@
     <sprite>sprites\spr_box</sprite>
     <sprite>sprites\spr_block</sprite>
     <sprite>sprites\spr_ring</sprite>
-    <sprite>sprites\spr_jump</sprite>
     <sprite>sprites\spr_smallmask</sprite>
   </sprites>
   <backgrounds name="background"/>

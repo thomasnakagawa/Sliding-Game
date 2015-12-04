@@ -7,7 +7,127 @@
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
-  <events/>
+  <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/////////////////////////////////////////Reads the text file////////////////////
+var bleh = file_text_open_write(obj_filename.filename);
+file_text_close(bleh);
+
+//open and read txt
+show_debug_message(obj_filename.filename);
+file = file_text_open_read(obj_filename.filename);
+var numlines = 0;
+while(!file_text_eof(file))
+{
+    str[numlines] = file_text_read_string(file);
+    file_text_readln(file);
+    numlines++;
+}
+file_text_close(file);
+//make levels based on info
+var l = 0;
+for(var t = 0; t &lt; numlines;t++) level[t] = noone;
+
+for(var i = 0; i &lt; numlines;i++)
+{
+    if(str[i] == "{")
+    {
+        i++;
+        var tempstr = str[i];
+        level[l] = instance_create(0,0,struct_level);
+        var k = 0;
+        while(tempstr != "}")
+        {
+            level[l].data[k] = tempstr;
+            if(string_length(tempstr) &gt; level[l].width)level[l].width = string_length(tempstr);
+            i++;
+            tempstr = str[i];
+            k++
+        }
+        level[l].height = k;
+        l++;
+    }
+}//for i
+//at this point level[n] is an array of pointers to struct_level objects
+num_levels = l;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(instance_exists(obj_trace_level)){
+    //add new level to array
+    level[num_levels] = instance_create(0,0,struct_level);
+    level[num_levels].width = obj_trace_level.width;
+    level[num_levels].height = obj_trace_level.height;
+    level[num_levels].data = obj_trace_level.data;
+    with(obj_trace_level) {instance_destroy();}
+    num_levels++; 
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>for(var i = 0; i &lt; num_levels; i++){
+    draw_text(40,40+i*15,string(i));   
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>

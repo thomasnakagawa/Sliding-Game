@@ -51,7 +51,7 @@ for(var i = 0; i &lt; numlines;i++)
         while(tempstr != "}")
         {
             level[l].data[k] = tempstr;
-            if(string_length(tempstr) &gt; level[l].width)level[l].width = string_length(tempstr);
+            if(string_length(tempstr) &gt; level[l].width) level[l].width = string_length(tempstr);
             i++;
             tempstr = str[i];
             k++

@@ -100,6 +100,16 @@ instance_create(340,10,obj_donebutton);
 ghostx = round((mouse_x-16)/32)*32;
 ghosty = round((mouse_y-16)/32)*32;
 
+//zooming
+if(mouse_wheel_up()){
+    view_wview[0] = 1024 * 1.5;
+    view_hview[0] = 768 * 1.5;
+}
+if(mouse_wheel_down()){
+    view_wview[0] = 1024 * 1;
+    view_hview[0] = 768 * 1;
+}
+
 if(keyboard_check(ord('1')) || keyboard_check(ord('H')))
 {
     cursor = 1;
@@ -116,9 +126,10 @@ if(keyboard_check(ord('4')) || keyboard_check(ord('L')))
 {
     cursor = 4;
 }
-if(keyboard_check(vk_control) &amp;&amp; keyboard_check_pressed(ord('S')))
+if(keyboard_check(vk_control) &amp;&amp; keyboard_check_pressed(vk_enter))
 {
     read_level();
+    room_goto(rm_plan);
 }
 </string>
           </argument>
