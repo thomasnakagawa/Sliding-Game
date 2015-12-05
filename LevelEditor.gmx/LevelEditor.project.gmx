@@ -16,6 +16,8 @@
     <sprite>sprites\spr_testtile</sprite>
     <sprite>sprites\spr_testwall</sprite>
     <sprite>sprites\spr_testkey</sprite>
+    <sprite>sprites\spr_title</sprite>
+    <sprite>sprites\spr_highlight</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -29,6 +31,8 @@
     <script>scripts\reset_test.gml</script>
     <script>scripts\test_to_edit.gml</script>
     <script>scripts\write_text.gml</script>
+    <script>scripts\set_level_pos.gml</script>
+    <script>scripts\struct_select.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="objects for editing">
@@ -52,8 +56,13 @@
     </objects>
     <objects name="buttons">
       <object>objects\obj_buttonkey</object>
+      <object>objects\obj_smalleditbutton</object>
+      <object>objects\obj_smalldeletebutton</object>
+      <object>objects\obj_smallbackbutton</object>
+      <object>objects\obj_smallforwardbutton</object>
       <object>objects\obj_createbutton</object>
       <object>objects\obj_getfilebutton</object>
+      <object>objects\obj_savebutton</object>
       <object>objects\obj_donebutton</object>
       <object>objects\obj_buttonrock</object>
       <object>objects\obj_buttontile</object>
@@ -62,6 +71,7 @@
       <object>objects\obj_editbutton</object>
       <object>objects\obj_resetbutton</object>
       <object>objects\base_button</object>
+      <object>objects\base_smallbutton</object>
     </objects>
     <objects name="objects for planning">
       <object>objects\obj_planner</object>

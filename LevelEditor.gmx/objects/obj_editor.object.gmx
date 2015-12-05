@@ -246,6 +246,8 @@ for(var i = 64; i &lt; room_height; i += 32)
 {
     draw_line(0,i,room_width,i);
 }
+draw_line_width(1024,64,1024,768,3);
+draw_line_width(0,768,1024,768,3);
 if(inborder)
 {
 draw_sprite(spr_spot,0,ghostx,ghosty);
@@ -255,7 +257,7 @@ draw_sprite(spr_spot,0,ghostx,ghosty);
         draw_circle_colour(x1+16,y1+16,3,c_lime,c_lime,false);
         if(x1 == ghostx || y1 == ghosty)
         {
-            draw_line_width_colour(x1+16,y1+16,ghostx+16,ghosty+16,1,c_black,c_black);
+            draw_line_width_colour(x1+16,y1+16,ghostx+16,ghosty+16,2,c_black,c_black);
             draw_circle_colour(x1+16,y1+16,3,c_lime,c_lime,false);
         }
         else

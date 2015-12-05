@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>base_smallbutton</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,52 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/////////////////////////////////////////Reads the text file////////////////////
-var bleh = file_text_open_write(obj_filename.filename);
-file_text_close(bleh);
-
-//open and read txt
-show_debug_message(obj_filename.filename);
-file = file_text_open_read(obj_filename.filename);
-var numlines = 0;
-while(!file_text_eof(file))
-{
-    str[numlines] = file_text_read_string(file);
-    file_text_readln(file);
-    numlines++;
-}
-file_text_close(file);
-//make levels based on info
-var l = 0;
-for(var t = 0; t &lt; numlines;t++) level[t] = noone;
-
-for(var i = 0; i &lt; numlines;i++)
-{
-    if(str[i] == "{")
-    {
-        i++;
-        var tempstr = str[i];
-        level[l] = instance_create(0,0,struct_level);
-        level[l].number = l;
-        var k = 0;
-        while(tempstr != "}")
-        {
-            level[l].data[k] = tempstr;
-            if(string_length(tempstr) &gt; level[l].width)level[l].width = string_length(tempstr);
-            i++;
-            tempstr = str[i];
-            k++
-        }
-        level[l].height = k;
-        l++;
-    }
-}//for i
-//at this point level[n] is an array of pointers to struct_level objects
-num_levels = l;
-set_level_pos();
-
-scroll_sp = 9;
-selected = -1;
+            <string>event_inherited();
+text = "&lt;";
+hover_message = "Shortcut: Left arrow";
+width = 15;
+height = 80;
 </string>
           </argument>
         </arguments>
@@ -93,41 +52,31 @@ selected = -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(instance_exists(obj_trace_level)){
-    //add new level to array
-    level[num_levels] = instance_create(0,0,struct_level);
-    level[num_levels].width = obj_trace_level.width;
-    level[num_levels].height = obj_trace_level.height;
-    level[num_levels].data = obj_trace_level.data;
-    level[num_levels].number = num_levels;
-    with(obj_trace_level) {instance_destroy();}
-    num_levels++; 
-    set_level_pos();
-}
-if(mouse_wheel_down()){
-    if(view_yview[0] &lt; 768){
-        view_yview[0] += scroll_sp;
-    }
-}
-if(mouse_wheel_up()){
-    if(view_yview[0] &gt; 0){
-        view_yview[0] -= scroll_sp;
-    }
-}
+            <string>event_inherited();
 
-if(mouse_check_button(mb_right)){
-        with(base_smallbutton) {instance_destroy();}
-        with(struct_level) {
-            selected = false;
+if(keyboard_check_pressed(vk_left)){{
+    var curr = obj_planner.selected;
+    if(curr != 0 &amp;&amp; curr != -1){
+        //swap the levels
+        with(obj_planner){
+            //swap levels
+            var templvl = level[selected];
+            level[selected] = level[selected-1];
+            level[selected-1] = templvl;
+            selected--;
+            set_level_pos();
+            //reselect the right level
+            with(level[selected]){struct_select();}
         }
-        selected = -1;
+    }
+}
 }
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="64">
+    <event eventtype="6" enumb="56">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -144,12 +93,22 @@ if(mouse_check_button(mb_right)){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_rectangle( room_width-10,
-                (view_yview[0]/768)*(768-20),
-                room_width,
-                20+( (view_yview[0]/768)*(768-20) ),
-                false);
-                                    
+            <string>if(hover){
+    var curr = obj_planner.selected;
+    if(curr != 0 &amp;&amp; curr != -1){
+        //swap the levels
+        with(obj_planner){
+            //swap levels
+            var templvl = level[selected];
+            level[selected] = level[selected-1];
+            level[selected-1] = templvl;
+            selected--;
+            set_level_pos();
+            //reselect the right level
+            with(level[selected]){struct_select();}
+        }
+    }
+}
 </string>
           </argument>
         </arguments>

@@ -75,10 +75,13 @@ width = 128;
           <argument>
             <kind>1</kind>
             <string>if(hover){
-    var inst = instance_create(0,0,obj_filename);
     var input = get_open_filename("text file|*.txt", "");
-    inst.filename = input;
-    room_goto(rm_plan);
+    if(input != "")
+    {
+        var inst = instance_create(0,0,obj_filename);
+        inst.filename = input;
+        room_goto(rm_plan);
+    }
 }
 </string>
           </argument>

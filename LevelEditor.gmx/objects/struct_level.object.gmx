@@ -28,6 +28,191 @@
             <string>height = 0;
 width = 0;
 data[0] = "";
+number = -1;
+hover = false;
+selected = false;
+
+face = noone;
+init = false;
+alarm[0] = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>init = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(mouse_x &gt; x &amp;&amp; mouse_x &lt; x+80 &amp;&amp; mouse_y &gt; y &amp;&amp; mouse_y &lt; y+80){
+    hover = true;
+}
+else
+{
+    hover = false;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="56">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(hover){
+    if(selected){
+        with(base_smallbutton) {instance_destroy();}
+        with(struct_level) {selected = false;}
+        obj_planner.selected = -1;
+    }else{
+        struct_select();
+    }  
+   
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(init){
+
+    if(!surface_exists(face)){
+        face = surface_create(80,80);
+        surface_set_target(face);
+        draw_clear_alpha(c_black,1);
+        surface_reset_target();
+    }
+    else
+    {
+        surface_set_target(face);
+        /*drawing to the surface here*/
+        var rec_size = min((74/height), (74/width));
+        for(var i = 0; i &lt; height; i++){
+            for(var j = 0; j &lt; string_length(data[i]); j++){
+                var blank = false;
+                switch(string_char_at(data[i],j)){
+                    case 'P':
+                        draw_set_colour(c_aqua);
+                        break;
+                    case 't':
+                        draw_set_colour(c_white);
+                        break;
+                    case 'w':
+                        draw_set_colour(c_fuchsia);
+                        break;
+                    case 'E':
+                        draw_set_colour(c_lime);
+                        break;
+                    case ' ':
+                        blank = true;
+                        break;
+                    default:
+                        blank = true;
+                        break;
+                }//switch
+                if(!blank){
+                    draw_rectangle( 3+(j*rec_size),
+                                    3+(i*rec_size),
+                                    3+(j*rec_size)+rec_size,
+                                    3+(i*rec_size)+rec_size,
+                                    false);
+                }
+            }
+        }
+    
+        surface_reset_target();
+        draw_surface(face,x,y);
+        if(hover &amp;&amp; selected){
+            draw_set_alpha(0.5);
+            draw_set_colour(c_purple);
+            draw_rectangle(x,y,x+80,y+80,false);
+            draw_set_alpha(1);
+            draw_set_colour(c_black);
+        }
+        else if(hover){
+            draw_set_alpha(0.5);
+            draw_set_colour(c_aqua);
+            draw_rectangle(x,y,x+80,y+80,false);
+            draw_set_alpha(1);
+            draw_set_colour(c_black);
+        }
+        else if(selected){
+            draw_set_alpha(0.5);
+            draw_set_colour(c_red);
+            draw_rectangle(x,y,x+80,y+80,false);
+            draw_set_alpha(1);
+            draw_set_colour(c_black);
+        }
+        
+    }
+}
 </string>
           </argument>
         </arguments>
