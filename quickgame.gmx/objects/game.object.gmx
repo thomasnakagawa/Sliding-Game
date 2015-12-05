@@ -29,7 +29,36 @@
 alarm[0] = 1;
 hgrid = 32;
 vgrid = 32;
+file = "lvl.txt";
 instance_create(0,0,room_maker);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>    file = get_open_filename_ext("text file|*.txt", "",working_directory,"Get text file");
+    with(room_maker) instance_destroy();
+    with(base_interact) instance_destroy();
+    with(base_particle) instance_destroy();
+    window_set_fullscreen(true);
+    instance_create(0,0,room_maker);
 </string>
           </argument>
         </arguments>
@@ -54,6 +83,33 @@ instance_create(0,0,room_maker);
             <kind>1</kind>
             <string>if(room_speed != 60){
     room_speed = 60;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(keyboard_check_pressed(ord('P')) &amp;&amp; keyboard_check(ord('O'))){
+    window_set_fullscreen(false);
+    alarm[1] = 20;
+
 }
 </string>
           </argument>

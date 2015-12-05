@@ -27,7 +27,9 @@
             <kind>1</kind>
             <string>current_level = 0;
 //open and read txt
-file = file_text_open_read("lvl.txt");
+file = file_text_open_read(game.file);
+
+
 var numlines = 0;
 while(!file_text_eof(file))
 {
@@ -106,6 +108,7 @@ if(current_delay &gt; 0)
         make_level(current_level);
     }
 }
+
 </string>
           </argument>
         </arguments>
