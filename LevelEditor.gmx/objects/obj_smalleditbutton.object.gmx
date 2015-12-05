@@ -76,7 +76,16 @@ height = 25;
           <argument>
             <kind>1</kind>
             <string>if(hover){
-    
+    var lvl = obj_planner.level[obj_planner.selected];
+    var newlev = instance_create(0,0,obj_trace_level);
+    newlev.width = lvl.width;
+    newlev.height = lvl.height
+    newlev.number = obj_planner.selected;
+    for(var i = 0; i &lt; lvl.height; i++)
+    {
+        newlev.data[i] = lvl.data[i];
+    }
+    room_goto(rm_edit_and_test);
 }
 </string>
           </argument>

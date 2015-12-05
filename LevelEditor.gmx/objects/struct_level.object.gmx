@@ -157,7 +157,7 @@ else
         for(var i = 0; i &lt; height; i++){
             for(var j = 0; j &lt; string_length(data[i]); j++){
                 var blank = false;
-                switch(string_char_at(data[i],j)){
+                switch(string_char_at(data[i],j+1)){
                     case 'P':
                         draw_set_colour(c_aqua);
                         break;
@@ -182,7 +182,13 @@ else
                                     3+(i*rec_size),
                                     3+(j*rec_size)+rec_size,
                                     3+(i*rec_size)+rec_size,
-                                    false);
+                                    true);
+                    /*draw_set_color(c_black);
+                    draw_rectangle( 3+(j*rec_size),
+                                    3+(i*rec_size),
+                                    3+(j*rec_size)+rec_size,
+                                    3+(i*rec_size)+rec_size,
+                                    true);*/
                 }
             }
         }

@@ -139,11 +139,3 @@ Pw              t  tttttw
  w      twwwwwwwwwwwt    
  wwwwwwwww               
 }
-{
-P
-P
-P
-}
-{
-P
-}

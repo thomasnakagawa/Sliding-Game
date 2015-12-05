@@ -26,50 +26,51 @@
           <argument>
             <kind>1</kind>
             <string>/////////////////////////////////////////Reads the text file////////////////////
-var bleh = file_text_open_write(obj_filename.filename);
-file_text_close(bleh);
-
-//open and read txt
-show_debug_message(obj_filename.filename);
-file = file_text_open_read(obj_filename.filename);
-var numlines = 0;
-while(!file_text_eof(file))
-{
-    str[numlines] = file_text_read_string(file);
-    file_text_readln(file);
-    numlines++;
-}
-file_text_close(file);
-//make levels based on info
-var l = 0;
-for(var t = 0; t &lt; numlines;t++) level[t] = noone;
-
-for(var i = 0; i &lt; numlines;i++)
-{
-    if(str[i] == "{")
+num_levels = 0;
+for(var t = 0; t &lt; 200;t++) level[t] = noone;
+if(obj_filename.filename != ""){
+    //open and read txt
+    show_debug_message(obj_filename.filename);
+    
+    file = file_text_open_read(obj_filename.filename);
+    
+    var numlines = 0;
+    while(!file_text_eof(file))
     {
-        i++;
-        var tempstr = str[i];
-        level[l] = instance_create(0,0,struct_level);
-        level[l].number = l;
-        var k = 0;
-        while(tempstr != "}")
-        {
-            level[l].data[k] = tempstr;
-            if(string_length(tempstr) &gt; level[l].width)level[l].width = string_length(tempstr);
-            i++;
-            tempstr = str[i];
-            k++
-        }
-        level[l].height = k;
-        l++;
+        str[numlines] = file_text_read_string(file);
+        file_text_readln(file);
+        numlines++;
     }
-}//for i
-//at this point level[n] is an array of pointers to struct_level objects
-num_levels = l;
-set_level_pos();
-
-scroll_sp = 9;
+    file_text_close(file);
+    //make levels based on info
+    var l = 0;
+    
+    for(var i = 0; i &lt; numlines;i++)
+    {
+        if(str[i] == "{")
+        {
+            i++;
+            var tempstr = str[i];
+            level[l] = instance_create(0,0,struct_level);
+            level[l].number = l;
+            var k = 0;
+            while(tempstr != "}")
+            {
+                level[l].data[k] = tempstr;
+                if(string_length(tempstr) &gt; level[l].width)level[l].width = string_length(tempstr);
+                i++;
+                tempstr = str[i];
+                k++
+            }
+            level[l].height = k;
+            l++;
+        }
+    }//for i
+    //at this point level[n] is an array of pointers to struct_level objects
+    num_levels = l;
+    set_level_pos();
+}
+scroll_sp = 25;
 selected = -1;
 </string>
           </argument>
@@ -94,15 +95,25 @@ selected = -1;
           <argument>
             <kind>1</kind>
             <string>if(instance_exists(obj_trace_level)){
-    //add new level to array
-    level[num_levels] = instance_create(0,0,struct_level);
-    level[num_levels].width = obj_trace_level.width;
-    level[num_levels].height = obj_trace_level.height;
-    level[num_levels].data = obj_trace_level.data;
-    level[num_levels].number = num_levels;
-    with(obj_trace_level) {instance_destroy();}
-    num_levels++; 
-    set_level_pos();
+    var inst = obj_trace_level;
+    if(inst.number == -1){//if it is a new level
+        //add new level to array
+        level[num_levels] = instance_create(0,0,struct_level);
+        level[num_levels].width = obj_trace_level.width;
+        level[num_levels].height = obj_trace_level.height;
+        level[num_levels].data = obj_trace_level.data;
+        level[num_levels].number = num_levels;
+        with(obj_trace_level) {instance_destroy();}
+        num_levels++; 
+        set_level_pos();
+    }else{//if it is an edit of an existing level
+        level[inst.number].width = obj_trace_level.width;
+        level[inst.number].height = obj_trace_level.height;
+        level[inst.number].data = obj_trace_level.data;
+        with(level[inst.number]){surface_free(face)};
+        with(obj_trace_level) {instance_destroy();}
+        set_level_pos();
+    }
 }
 if(mouse_wheel_down()){
     if(view_yview[0] &lt; 768){

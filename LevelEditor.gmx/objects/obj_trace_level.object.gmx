@@ -28,6 +28,7 @@
             <string>height = 0;
 width = 0;
 data[0] = "";
+number = -1;
 </string>
           </argument>
         </arguments>

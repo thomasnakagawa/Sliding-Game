@@ -78,6 +78,19 @@ height = 25;
             <string>if(hover){
     if(show_question("Delete this level?")){
         //delete selected struct_level. remove it from obj_planner's array, and shift all other levels over
+        with(obj_planner){
+            with(level[selected]){instance_destroy()};
+            var k = selected;
+            while(k &lt; num_levels-1){
+                level[k] = level[k+1];
+                level[k].number = k;
+                k++;
+            }
+            selected = -1;
+            with(base_smallbutton){instance_destroy();}
+            num_levels--;
+            set_level_pos();
+        }
     }else{
         //do nothing
     }

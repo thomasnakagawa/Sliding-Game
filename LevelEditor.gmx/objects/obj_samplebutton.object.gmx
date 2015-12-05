@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-text = "Choose file";
-hover_message = "must be txt";
+text = "Open sample levels";
+hover_message = "";
 width = 192;
 </string>
           </argument>
@@ -75,11 +75,12 @@ width = 192;
           <argument>
             <kind>1</kind>
             <string>if(hover){
-    var input = get_open_filename_ext("text file|*.txt", "",working_directory,"Get text file");
+    var input = "samplelevels.txt";
     if(input != "")
     {
         var inst = instance_create(0,0,obj_filename);
         inst.filename = input;
+        inst.sample = true;
         room_goto(rm_plan);
     }
 }

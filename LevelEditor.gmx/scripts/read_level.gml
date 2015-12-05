@@ -48,10 +48,11 @@ for(var i = 0; i < spacesheight; i++){
     show_debug_message(data[i]);
 }//i
 
-//make trac_level for the planning room
+//make trace_level for the planning room
 var newlev = instance_create(0,0,obj_trace_level);
 newlev.width = spaceswidth;
 newlev.height = spacesheight;
+newlev.number = obj_editor.editno;
 for(var i = 0; i < spacesheight; i++)
 {
     newlev.data[i] = data[i];

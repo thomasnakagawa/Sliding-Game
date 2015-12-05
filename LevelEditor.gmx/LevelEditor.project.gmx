@@ -3,6 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
+  <datafiles number="1" name="datafiles"/>
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
@@ -19,7 +20,9 @@
     <sprite>sprites\spr_title</sprite>
     <sprite>sprites\spr_highlight</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\background0</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\place_piece.gml</script>
@@ -62,6 +65,8 @@
       <object>objects\obj_smallforwardbutton</object>
       <object>objects\obj_createbutton</object>
       <object>objects\obj_getfilebutton</object>
+      <object>objects\obj_newtextbutton</object>
+      <object>objects\obj_samplebutton</object>
       <object>objects\obj_savebutton</object>
       <object>objects\obj_donebutton</object>
       <object>objects\obj_buttonrock</object>

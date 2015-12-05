@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>filename = "";
 savefile = "";
+sample = false;
 </string>
           </argument>
         </arguments>
