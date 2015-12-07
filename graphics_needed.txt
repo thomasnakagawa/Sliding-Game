@@ -1,0 +1,22 @@
+Graphics for game: 
+Scalable vector graphics, all have to be .swf format. 
+Game is based on a grid, so they should be squares.
+
+	Character:
+		Standing: facing up, down and side
+		Walking/sliding/moving: up, down and side
+		
+
+	Blocks:
+		Ice (or other kind of thing that breaks after being stepped on)
+		Rock (or other thing that doesnt break after being stepped on)
+		Ending goal block
+
+	Background:
+		Backgrounds should either be tileable, or in 16:9 aspect ratio. This makes it so it can fit the game screen without stretching
+		
+	
+	Other stuff:
+		Title banner: this is the thing that says the name of the game on the title screen. The title of the game isnt decided yet, so if you think of something good use that.
+
+	
