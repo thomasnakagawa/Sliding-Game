@@ -39,6 +39,7 @@
     <sprite>sprites\spr_block</sprite>
     <sprite>sprites\spr_ring</sprite>
     <sprite>sprites\spr_smallmask</sprite>
+    <sprite>sprites\spr_title</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -57,6 +58,7 @@
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_tile</object>
+    <object>objects\obj_banner</object>
     <object>objects\obj_key</object>
     <object>objects\base_plat</object>
     <object>objects\obj_wall</object>

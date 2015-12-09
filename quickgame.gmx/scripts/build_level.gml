@@ -32,6 +32,9 @@ for(var i = 0; i < height;i++)
                 instance_create(xbor + j*grid, ybor + i*grid,obj_tile);
                 instance_create(xbor + j*grid, ybor + i*grid,obj_player);
                 break;
+            case "!":
+                instance_create(xbor + j*grid, ybor + i*grid,obj_banner);
+                break;
             default:
                 break;
         }

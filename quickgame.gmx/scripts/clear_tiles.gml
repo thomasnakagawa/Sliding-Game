@@ -9,7 +9,8 @@ for(var i = 0; i < instance_number(base_interact); i++){
     var newswoop = instance_create(inst.x,inst.y,obj_swoop_away);
     newswoop.sprite_index = inst.sprite_index;
     newswoop.x_start = inst.y;
-    newswoop.scale_gain = game.hgrid/max(sprite_get_width(newswoop.sprite_index),sprite_get_height(newswoop.sprite_index));
+    newswoop.scale_gain = inst.scale_gain;
+
 }
 with(base_interact){
     exit_particle = false;

@@ -38,6 +38,7 @@ max_speed = game.hgrid * .75;
 movement = "none";
 
 moving = false;
+stuck = false;
 
 
 inputs = ds_queue_create();
@@ -205,6 +206,13 @@ else if(moving)
         y = tary;
         movement = "none";
         moving = false;  
+        //check if stuck
+        if( !place_meeting(x,y-game.vgrid,base_plat) &amp;&amp;
+            !place_meeting(x,y+game.vgrid,base_plat) &amp;&amp;
+            !place_meeting(x-game.hgrid,y,base_plat) &amp;&amp;
+            !place_meeting(x+game.hgrid,y,base_plat)){
+                stuck = true;
+        }
     }
 }
 
