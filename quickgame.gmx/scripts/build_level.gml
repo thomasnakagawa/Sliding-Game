@@ -32,6 +32,18 @@ for(var i = 0; i < height;i++)
                 instance_create(xbor + j*grid, ybor + i*grid,obj_tile);
                 instance_create(xbor + j*grid, ybor + i*grid,obj_player);
                 break;
+            case "p":
+                instance_create(xbor + j*grid, ybor + i*grid,obj_wall);
+                instance_create(xbor + j*grid, ybor + i*grid,obj_player);
+                break;
+            case "f":
+                instance_create(xbor + j*grid, ybor + i*grid,obj_wall);
+                instance_create(xbor + j*grid, ybor + i*grid,obj_follow);
+                break;
+            case "F":
+                instance_create(xbor + j*grid, ybor + i*grid,obj_tile);
+                instance_create(xbor + j*grid, ybor + i*grid,obj_follow);
+                break;
             case "!":
                 instance_create(xbor + j*grid, ybor + i*grid,obj_banner);
                 break;

@@ -40,6 +40,22 @@
     <sprite>sprites\spr_ring</sprite>
     <sprite>sprites\spr_smallmask</sprite>
     <sprite>sprites\spr_title</sprite>
+    <sprite>sprites\spr_follow</sprite>
+    <sprites name="penguin images">
+      <sprite>sprites\vec_stand_front</sprite>
+      <sprite>sprites\vec_stand_back</sprite>
+      <sprite>sprites\vec_stand_right</sprite>
+      <sprite>sprites\vec_stand_left</sprite>
+      <sprite>sprites\vec_slide_back</sprite>
+      <sprite>sprites\vec_slide_front</sprite>
+      <sprite>sprites\vec_slide_right</sprite>
+      <sprite>sprites\vec_slide_left</sprite>
+    </sprites>
+    <sprites name="tile images">
+      <sprite>sprites\vec_ice</sprite>
+      <sprite>sprites\vec_key</sprite>
+      <sprite>sprites\vec_rock</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -53,7 +69,7 @@
     <script>scripts\clear_tiles.gml</script>
     <script>scripts\offset_tiles.gml</script>
     <script>scripts\get_gridsize.gml</script>
-    <script>scripts\script9.gml</script>
+    <script>scripts\setImage.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
@@ -81,6 +97,7 @@
     <object>objects\base_particle</object>
     <object>objects\obj_swoop_away</object>
     <object>objects\obj_boot</object>
+    <object>objects\obj_follow</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\intro_room</room>

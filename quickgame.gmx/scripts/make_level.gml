@@ -9,3 +9,7 @@ with(room_maker){
         build_level(g);
     }
 }
+//for(var i = 0; i < levelno; i++){
+//    var inst = instance_create(obj_player.x,obj_player.y,obj_follow);
+//    inst.host = obj_player.id;
+//}

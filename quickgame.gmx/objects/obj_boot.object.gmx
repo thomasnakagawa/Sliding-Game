@@ -25,18 +25,24 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.myroom = room_add();
+            <string>//set up a room with the size of the screen resolution
+global.playroom = room_add();
 var wid = display_get_width();
 var hei = display_get_height();
-room_set_width(global.myroom, wid);
-room_set_height(global.myroom, hei);
-room_set_view(global.myroom,0,true,
+room_set_width(global.playroom, wid);
+room_set_height(global.playroom, hei);
+room_set_view(global.playroom,0,true,
                                     0,0,wid,hei,0,0,wid,hei,
           /*object follow stuff*/   0,0,0,0,-1);
-room_instance_add(global.myroom, 0, 0, game);
+          
+//add the game object to the new room
+room_instance_add(global.playroom, 0, 0, game);
 log(display_get_width(), " x ", display_get_height());
 
-room_goto(global.myroom);
+
+
+room_set_background_colour(global.playroom,c_white,true);
+room_goto(global.playroom);
 </string>
           </argument>
         </arguments>

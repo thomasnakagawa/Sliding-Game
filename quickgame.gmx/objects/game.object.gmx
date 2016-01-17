@@ -31,7 +31,13 @@ hgrid = 32;
 vgrid = 32;
 file = "lvl.txt";
 instance_create(0,0,room_maker);
+
+//for showing the restart prompt
 draw_space = false;
+times_stuck = 0;
+space_timer = 0;
+space_timer_set = 60 * .75;
+space_max = 5;
 </string>
           </argument>
         </arguments>
@@ -113,7 +119,18 @@ draw_space = false;
 
 }
 
-draw_space = instance_exists(obj_player) &amp;&amp; obj_player.stuck;
+//draw_space = instance_exists(obj_player) &amp;&amp; obj_player.stuck;
+if(instance_exists(obj_player) &amp;&amp; obj_player.stuck == true){
+    obj_player.stuck = false;
+    space_timer = space_timer_set;
+    times_stuck++;
+}
+if(times_stuck &lt; space_max &amp;&amp; space_timer &gt; 0){
+    space_timer--;
+    if(space_timer &lt;= 0){
+        draw_space = true;
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -203,6 +220,8 @@ draw_space = instance_exists(obj_player) &amp;&amp; obj_player.stuck;
           <argument>
             <kind>1</kind>
             <string>restart_level();
+draw_space = false;
+space_timer = 0;
 </string>
           </argument>
         </arguments>
