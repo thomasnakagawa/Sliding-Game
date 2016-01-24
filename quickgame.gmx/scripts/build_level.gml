@@ -15,37 +15,39 @@ for(var i = 0; i < height;i++)
     for(var j = 1; j <= width; j++)
     {
         var c = string_char_at(data[i],j);
+        var xpos = floor(xbor + j*grid);
+        var ypos = floor(ybor + i*grid);
         switch(c)
         {
             case " ":
                 break;
             case "t":
-                instance_create(xbor + j*grid, ybor + i*grid,obj_tile);
+                instance_create(xpos, ypos,obj_tile);
                 break;
             case "w":
-                instance_create(xbor + j*grid, ybor + i*grid,obj_wall);
+                instance_create(xpos, ypos,obj_wall);
                 break;
             case "E":
-                instance_create(xbor + j*grid, ybor + i*grid,obj_key);
+                instance_create(xpos, ypos,obj_key);
                 break;
             case "P":
-                instance_create(xbor + j*grid, ybor + i*grid,obj_tile);
-                instance_create(xbor + j*grid, ybor + i*grid,obj_player);
+                instance_create(xpos, ypos,obj_tile);
+                instance_create(xpos, ypos,obj_player);
                 break;
             case "p":
-                instance_create(xbor + j*grid, ybor + i*grid,obj_wall);
-                instance_create(xbor + j*grid, ybor + i*grid,obj_player);
+                instance_create(xpos, ypos,obj_wall);
+                instance_create(xpos, ypos,obj_player);
                 break;
             case "f":
-                instance_create(xbor + j*grid, ybor + i*grid,obj_wall);
-                instance_create(xbor + j*grid, ybor + i*grid,obj_follow);
+                instance_create(xpos, ypos,obj_wall);
+                instance_create(xpos, ypos,obj_follow);
                 break;
             case "F":
-                instance_create(xbor + j*grid, ybor + i*grid,obj_tile);
-                instance_create(xbor + j*grid, ybor + i*grid,obj_follow);
+                instance_create(xpos, ypos,obj_tile);
+                instance_create(xpos, ypos,obj_follow);
                 break;
             case "!":
-                instance_create(xbor + j*grid, ybor + i*grid,obj_banner);
+                instance_create(xpos, ypos,obj_banner);
                 break;
             default:
                 break;

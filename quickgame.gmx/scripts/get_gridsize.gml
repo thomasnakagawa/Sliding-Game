@@ -9,5 +9,6 @@ var xgrid = round(pixels_wide/w);
 var ygrid = round(pixels_high/h);
 var temp = min(xgrid,ygrid);
 if(temp % 2 == 1) temp--;
+
 //return 32;
 return temp;

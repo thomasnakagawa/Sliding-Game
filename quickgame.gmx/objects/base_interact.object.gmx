@@ -31,7 +31,8 @@
     active = false;
     exit_particle = true;
 }
-scale_gain = game.hgrid/max(sprite_get_width(sprite_index),sprite_get_height(sprite_index));
+var precision = 100;
+scale_gain = ceil( precision * (game.hgrid / max(sprite_get_width(sprite_index),sprite_get_height(sprite_index)))  )  / precision;
 </string>
           </argument>
         </arguments>

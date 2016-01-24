@@ -29,7 +29,7 @@
 outro_particle = obj_outrokey;
 been_used = false;
 event_inherited();
-scale_gain = game.hgrid/sprite_get_height(sprite_index);
+//scale_gain = game.hgrid/sprite_get_height(sprite_index);
 </string>
           </argument>
         </arguments>
